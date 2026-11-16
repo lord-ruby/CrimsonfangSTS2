@@ -1,0 +1,32 @@
+{
+  "CRIMSONFANG-CRIMSONFANG1_EPOCH.description": "From the Depths of the Abyss, Something emerged.\n\nA Beast of unbeknownst power. Lurking in the shadows keeping close eye on the Architect and their creations.",
+  "CRIMSONFANG-CRIMSONFANG1_EPOCH.title": "Malice",
+  "CRIMSONFANG-CRIMSONFANG1_EPOCH.unlockInfo": "{IsRevealed:Beat|Beat} [gold]Act[/gold] [blue]3[/blue] with the [purple]Morningstar[/purple]{IsRevealed:| to reveal this Epoch}.",
+  
+  "CRIMSONFANG-CRIMSONFANG2_EPOCH.description": "The beast crawled once more out of the depths, as the Blight took form.\n\nFrom the ashes of violence and the blood of the fallen a pool of Ichor was born.",
+  "CRIMSONFANG-CRIMSONFANG2_EPOCH.title": "Ichor",
+  "CRIMSONFANG-CRIMSONFANG2_EPOCH.unlockInfo": "{IsRevealed:Beat|Beat} [gold]Act[/gold] [blue]2[/blue] with the [purple]Morningstar[/purple]{IsRevealed:| to reveal this Epoch}.",
+  
+  "CRIMSONFANG-CRIMSONFANG3_EPOCH.description": "From the shimmering ripples of the Ichor a creature was born, The Morningstar. The Beast could not bare to look at Her. She left the warmth of the Ichor to roam, Looking for any purpose.",
+  "CRIMSONFANG-CRIMSONFANG3_EPOCH.title": "The Morningstar",
+  "CRIMSONFANG-CRIMSONFANG3_EPOCH.unlockInfo": "{IsRevealed:Beat|Beat} [gold]Act[/gold] [blue]1[/blue] with the [purple]Morningstar[/purple]{IsRevealed:| to reveal this Epoch}.",
+  
+  "CRIMSONFANG-CRIMSONFANG4_EPOCH.description": "\nThe Morningstar had roamed and roamed, Growing bitter and cold. And from the depths of her power something manifested.\n\nShe looked down at the puddle of water infront of her and found a shining gemstone, Crystallized from nothing.\n\nShe Grabs the Gemstone and immediately, a surge of energy washes over her.",
+  "CRIMSONFANG-CRIMSONFANG4_EPOCH.title": "Bitterness",
+  "CRIMSONFANG-CRIMSONFANG4_EPOCH.unlockInfo": "{IsRevealed:Killed|Kill} [blue]15[/blue] [purple]Elites[/purple] with the [purple]Morningstar[/purple]{IsRevealed:| to reveal this Epoch}.",
+  
+  "CRIMSONFANG-CRIMSONFANG5_EPOCH.description": "The Morningstar looked for anything and anyone tired and exhausted.\n\nWith the last remaining drops of her Mana she looked beyond the physical to see anything around her.\n\nA Visage appeared in her minds eye: A bustling populated spire",
+  "CRIMSONFANG-CRIMSONFANG5_EPOCH.title": "Seer",
+  "CRIMSONFANG-CRIMSONFANG5_EPOCH.unlockInfo": "{IsRevealed:Played|Play} a run with the [yellow]Fool[/yellow]{IsRevealed:| to reveal this Epoch}.",
+  "CRIMSONFANG-CRIMSONFANG5_EPOCH.unlockText": "Unlocked the [purple]Morningstar[/purple] as a playable character.",
+  
+  "CRIMSONFANG-CRIMSONFANG6_EPOCH.description": "She grew bored roaming the spire bugs were stomped out like nothing; Her time roaming the wilderness had taught her well.\n\nBut she knew it wasnt enough.\n\nShe craved something more...\n\nShe sought out any creature she could, stronger and stronger...",
+  "CRIMSONFANG-CRIMSONFANG6_EPOCH.title": "Bloodshed",
+  "CRIMSONFANG-CRIMSONFANG6_EPOCH.unlockInfo": "{IsRevealed:Killed|Kill} [blue]15[/blue] [red]Bosses[/red] with the [purple]Morningstar[/purple]{IsRevealed:| to reveal this Epoch}.",
+  
+  "CRIMSONFANG-CRIMSONFANG7_EPOCH.description": "The Morningstar faced off against the Architect. She growled at the Architect as her demands for a fair fight were ignored. \n\nShe storms in again and again and again, but the architect cares not for her petty fruitless hatred manifest in the need to fight.\n\nShe ascends again, and along the way a Merchant shows her something. A dusty tome of spells supposedly forbidden for most to use.\n",
+  "CRIMSONFANG-CRIMSONFANG7_EPOCH.title": "A Worthy Opponent",
+  "CRIMSONFANG-CRIMSONFANG7_EPOCH.unlockInfo": "{IsRevealed:Beat|Beat} [red]Ascension[/red] [blue]1[/blue] with the [purple]Morningstar[/purple]{IsRevealed:| to reveal this Epoch}.",
+  
+  "STORY_CRIMSONFANG": "The Morningstar"
+}

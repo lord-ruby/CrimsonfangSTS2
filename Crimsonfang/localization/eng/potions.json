@@ -1,0 +1,10 @@
+{
+  "CRIMSONFANG-SPECTRAL_POTION.description": "[gold]Conjure[/gold] [blue]2[/blue] random Cards",
+  "CRIMSONFANG-SPECTRAL_POTION.title": "Spectral Potion",
+
+  "CRIMSONFANG-CRYSTALLINE_SOLUTION.description": "Add [gold]Replay[/gold] 1 to a Card in your [gold]Hand[/gold]",
+  "CRIMSONFANG-CRYSTALLINE_SOLUTION.title": "Crystalline Solution",
+
+  "CRIMSONFANG-BITTER_FLASK.description": "Choose [blue]1[/blue] of [blue]3[/blue] Upgraded Cards from other Characters to add to your [gold]Hand[/gold]",
+  "CRIMSONFANG-BITTER_FLASK.title": "Bitter Flask"
+}

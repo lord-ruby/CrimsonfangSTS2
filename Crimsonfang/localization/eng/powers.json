@@ -1,0 +1,13 @@
+{
+  "CRIMSONFANG-LYCAN_FORM_POWER.description": "Whenever you play a Skill, Play a random Attack",
+  "CRIMSONFANG-LYCAN_FORM_POWER.smartDescription": "Whenever you Play a Skill, Play [blue]{Amount}[/blue] Random {Amount:plural:Card|Cards}.",
+  "CRIMSONFANG-LYCAN_FORM_POWER.title": "Lycan Form",
+
+  "CRIMSONFANG-HYPNOTISM_POWER.description": "[gold]Weak[/gold] and [gold]Vulnerable[/gold] are applied once per stack for this turn.",
+  "CRIMSONFANG-HYPNOTISM_POWER.smartDescription": "[gold]Weak[/gold] and [gold]Vulnerable[/gold] are applied once per stack for the next {Amount:plural:Turn|{} Turns}.",
+  "CRIMSONFANG-HYPNOTISM_POWER.title": "Hypnotism",
+
+  "CRIMSONFANG-HEDONISM_POWER.description": "Whenever you play a card this turn, Draw a Card.",
+  "CRIMSONFANG-HEDONISM_POWER.smartDescription": "Whenever you play a card this turn, Draw {Amount:plural:A Card|{} Cards}.",
+  "CRIMSONFANG-HEDONISM_POWER.title": "Hedonism"
+}

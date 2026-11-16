@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkx1yh2d3gj"]
+
+[ext_resource type="Texture2D" uid="uid://5u8ukhakexgw" path="res://Crimsonfang/scenes/creature_visuals/crimsonfang.png" id="1_ge47q"]
+
+[node name="Crimsonfang" type="Node2D"]
+metadata/_edit_group_ = true
+
+[node name="FormVfx" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -122.0
+offset_top = -244.0
+offset_right = 122.0
+mouse_filter = 2
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -146)
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -302)
+
+[node name="Crimsonfang" type="Sprite2D" parent="."]
+position = Vector2(0.50000286, -121.5)
+scale = Vector2(0.779, 0.675)
+texture = ExtResource("1_ge47q")

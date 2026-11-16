@@ -1,0 +1,172 @@
+{
+  "CRIMSONFANG-STRIKE_CRIMSONFANG.description": "Deal {Damage:diff()} Damage.",
+  "CRIMSONFANG-STRIKE_CRIMSONFANG.title": "Strike",
+
+  "CRIMSONFANG-DEFEND_CRIMSONFANG.description": "Gain {Block:diff()} [gold]Block[/gold].",
+  "CRIMSONFANG-DEFEND_CRIMSONFANG.title": "Defend",
+  
+  "CRIMSONFANG-PROVIDENCE.description": "[gold]Conjure[/gold].\n[gold]On Cast[/gold] - Deal {Damage:diff()} Damage",
+  "CRIMSONFANG-PROVIDENCE.title": "Providence",
+
+  "CRIMSONFANG-SPELLWEAVER.description": "[gold]Cast[/gold] {CastAmount:diff()}",
+  "CRIMSONFANG-SPELLWEAVER.title": "Spellweaver",
+
+  "CRIMSONFANG-WARD.description": "Double your [gold]Block.[/gold]",
+  "CRIMSONFANG-WARD.title": "Ward",
+
+  "CRIMSONFANG-HAEMOPHOBIA.description": "Apply 1 [gold]Vulnerable[/gold]\nApply {VulnerableAmt:diff()} more [gold]Vulnerable[/gold] if you have attacked this turn.",
+  "CRIMSONFANG-HAEMOPHOBIA.title": "Haemophobia",
+
+  "CRIMSONFANG-HEXED.description": "Choose {Cards:plural:a card|[blue]{}[/blue] Cards}. Add a copy of {Cards:plural:that card|those cards} into your [gold]Spell Pile[/gold]",
+  "CRIMSONFANG-HEXED.title": "Hexed",
+
+  "CRIMSONFANG-DECANTATION.description": "Choose 1 of 2 random Cards from another character to add into your [gold]Hand[/gold].{IfUpgraded:show:\nIt gains [gold]Retain[/gold].|}",
+  "CRIMSONFANG-DECANTATION.title": "Decantation",
+
+  "CRIMSONFANG-LYCAN_FORM.description": "Whenever you Play a Skill, Play a random Attack.",
+  "CRIMSONFANG-LYCAN_FORM.title": "Lycan Form",
+
+  "CRIMSONFANG-CONGEALED.description": "Apply 1 [gold]Vulnerable[/gold].\nPut a card from your [gold]Discard Pile[/gold] into your [gold]Hand[/gold].",
+  "CRIMSONFANG-CONGEALED.title": "Congealed",
+
+  "CRIMSONFANG-DESCENT.description": "[gold]Conjure[/gold].\n[gold]On Cast[/gold] - Deal {Damage:diff()} Damage, [gold]Conjure[/gold] this card again.",
+  "CRIMSONFANG-DESCENT.title": "Descent",
+
+  "CRIMSONFANG-SHARPENED_STRIKE.description": "Deal {Damage:diff()} Damage.",
+  "CRIMSONFANG-SHARPENED_STRIKE.title": "Sharpened Strike",
+
+  "CRIMSONFANG-FLAME_VOLLEY.description": "[gold]Conjure[/gold] \n[gold]On Cast[/gold] - Deal {Damage:diff()} Damage to all enemies twice.",
+  "CRIMSONFANG-FLAME_VOLLEY.title": "Flame Volley",
+
+  "CRIMSONFANG-BROKEN_PULSE.description": "Deal {Damage:diff()} Damage.\nTransform a card at random into an attack from another Character.",
+  "CRIMSONFANG-BROKEN_PULSE.title": "Broken Pulse",
+
+  "CRIMSONFANG-RETALLIATION.description": "Deal {Damage:diff()} Damage.\nIf the enemy intends to attack, Deal {DamageSecond:diff()} more Damage and Gain {Block:diff()} [gold]Block[/gold].",
+  "CRIMSONFANG-RETALLIATION.title": "Retalliation",
+
+  "CRIMSONFANG-MIASMA.description": "Deal {Damage:diff()} Damage.\nApply {DebuffVar:diff()} [gold]Weak[/gold] and [gold]Vulnerable[/gold].",
+  "CRIMSONFANG-MIASMA.title": "Miasma",
+
+  "CRIMSONFANG-TWIST_THE_KNIFE.description": "Deal Damage equal to Half the damage of the last played Attack.{InCombat:\n(Deals {Damage:diff()} damage.)|}",
+  "CRIMSONFANG-TWIST_THE_KNIFE.title": "Twist The Knife",
+
+  "CRIMSONFANG-ENDLESS_SATCHEL.description": "Deal {Damage:diff()} Damage.\nAdd a random Skill from another character into your [gold]Hand[/gold], it gains [gold]Ethereal[/gold] and [gold]Exhaust[/gold].",
+  "CRIMSONFANG-ENDLESS_SATCHEL.title": "Endless Satchel",
+
+  "CRIMSONFANG-REACH_BEYOND.description": "Deal {CalculatedDamage:diff()} damage.\nDeals {ExtraDamage:diff()} additional damage for ALL your cards that [gold]Conjure[/gold]",
+  "CRIMSONFANG-REACH_BEYOND.title": "Reach Beyond",
+
+  "CRIMSONFANG-CRYSTALIZATION.description": "Deal {Damage:diff()} Damage.\nDeal {DamageSecond:diff()} Damage to all enemies.",
+  "CRIMSONFANG-CRYSTALIZATION.title": "Crystalization",
+
+  "CRIMSONFANG-INFERNAL_STRIKE.description": "Deal {Damage:diff()} Damage Twice.\nGain {Vigor:diff()} [gold]Vigor[/gold].",
+  "CRIMSONFANG-INFERNAL_STRIKE.title": "Infernal Strike",
+
+  "CRIMSONFANG-SUCK_IT_UP.description": "Gain {Block:diff()} [gold]Block[/gold].\nIf 3 or more Cards have been played this turn, Gain {Block:diff()} more [gold]Block[/gold].",
+  "CRIMSONFANG-SUCK_IT_UP.title": "Suck It Up",
+
+  "CRIMSONFANG-MANTRA.description": "[gold]Cast[/gold] {CastAmount:diff()}.\nDraw {Cards:plural:{} Card|{} Cards}.",
+  "CRIMSONFANG-MANTRA.title": "Mantra",
+
+  "CRIMSONFANG-HYPNOTISM.description": "[gold]Weak[/gold] and [gold]Vulnerable[/gold] are applied once per stack for this turn.",
+  "CRIMSONFANG-HYPNOTISM.title": "Hypnotism",
+
+  "CRIMSONFANG-CATALYST.description": "Add [gold]Replay[/gold] {AddReplay:diff()} to a [gold]Strike[/gold] or [gold]Defend[/gold]",
+  "CRIMSONFANG-CATALYST.title": "Catalyst",
+
+  "CRIMSONFANG-OPEN_FLAME.description": "Lose {Block:diff()} [gold]Block[/gold].\nGain [gold]Vigor[/gold] equal to [gold]Block[/gold] lost.",
+  "CRIMSONFANG-OPEN_FLAME.title": "Open Flame",
+
+  "CRIMSONFANG-CAUTERIZE.description": "[gold]Exhaust[/gold] a random card in your Hand.",
+  "CRIMSONFANG-CAUTERIZE.title": "Cauterize",
+
+  "CRIMSONFANG-REVITALIZATION.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {Energy:energyIcons()}.\nAdd a [gold]Cauterize[/gold] to your Hand.",
+  "CRIMSONFANG-REVITALIZATION.title": "Revitalization",
+
+  "CRIMSONFANG-ARCANE_BLAST.description": "Deal {Damage:diff()} Damage to ALL enemies.\n[gold]Cast[/gold] {CastAmount:diff()}.",
+  "CRIMSONFANG-ARCANE_BLAST.title": "Arcane Blast",
+
+  "CRIMSONFANG-ECLIPSE.description": "[gold]Conjure[/gold]\n[gold]On Cast[/gold] - Gain {Block:diff()} [gold]Block[/gold]",
+  "CRIMSONFANG-ECLIPSE.title": "Eclipse",
+
+  "CRIMSONFANG-SUCCUMB_TO_ROT.description": "Deal {Damage:diff()} Damage.\nIf this card deals atleast 10 damage create a random {IfUpgraded:show:Upgraded |}card from another character.",
+  "CRIMSONFANG-SUCCUMB_TO_ROT.title": "Succumb To Rot",
+
+  "CRIMSONFANG-AD_NAUSEUM.description": "Deal {Damage:diff()} Damage.\nDraw {Cards:plural:{} Card|{} Cards}.\nIf you draw a card with [gold]Replay[/gold], [gold]Replay[/gold] this card.",
+  "CRIMSONFANG-AD_NAUSEUM.title": "Ad Nauseum",
+
+  "CRIMSONFANG-HEDONISM.description": "Gain {Energy:energyIcons()}.\nDraw {Cards:plural:{} Card|{} Cards}.\n[gold]Conjure[/gold]\n[gold]On Cast[/gold] - When a card is played this turn Draw a Card, [gold]Exhaust[/gold].",
+  "CRIMSONFANG-HEDONISM.title": "Hedonism",
+
+  "CRIMSONFANG-ANATTA_DUKKHA_ANNICA.description": "[gold]Conjure[/gold] your entire Hand. Add [gold]Exhaust[/gold] to every card [gold]Conjured[/gold] this way.",
+  "CRIMSONFANG-ANATTA_DUKKHA_ANNICA.title": "Anatta, Dukkha, Annica",
+
+  "CRIMSONFANG-HOMING_BLASTS.description": "[gold]Conjure[/gold].\n[gold]On Cast[/gold] - Deal {Damage:diff()} to ALL enemies 3 times.",
+  "CRIMSONFANG-HOMING_BLASTS.title": "Homing Blasts",
+
+  "CRIMSONFANG-INSATIABLE.description": "Deal {Damage:diff()} Damage.\n[gold]Cast[/gold] a random attack from your spell pile.",
+  "CRIMSONFANG-INSATIABLE.title": "Insatiable",
+
+  "CRIMSONFANG-WILD_STRIKE.description": "Deal {Damage:diff()} Damage.\n[gold]Conjure[/gold] a random Attack.\nPlay a random Attack.",
+  "CRIMSONFANG-WILD_STRIKE.title": "Wild Strike",
+
+  "CRIMSONFANG-DIAMOND_DRILL_HEAD.description": "Deal {Damage:diff()} Damage.\n[gold]Conjure[/gold].\n[gold]On Cast[/gold] - Return this card to your hand.",
+  "CRIMSONFANG-DIAMOND_DRILL_HEAD.title": "Diamond Drill Head",
+  
+  "CRIMSONFANG-UNSTABLE_SOLUTION.description": "Deal {Damage:diff()} Damage.\n[gold]Replay[/gold] the last played card.",
+  "CRIMSONFANG-UNSTABLE_SOLUTION.title": "Unstable Solution",
+
+  "CRIMSONFANG-REFLECTIVE_BLADE.description": "Deal {Damage:diff()} Damage.\nGain {CalculatedBlock:diff()} [gold]Block[/gold]\nGain {CalculationExtra:diff()} more [gold]Block[/gold] for each card in your Spell Pile.",
+  "CRIMSONFANG-REFLECTIVE_BLADE.title": "Reflective Blade",
+
+  "CRIMSONFANG-IMMOLATE.description": "Deal {Damage:diff()} Damage.\nCosts {Energy:energyIcons()} more for every other card in your hand.",
+  "CRIMSONFANG-IMMOLATE.title": "Immolate",
+
+  "CRIMSONFANG-BITE_FORCE.description": "Deal {Damage:diff()} Damage.\nIncrease this cards damage by {DamageIncrease:diff()} for the combat if another card is played whilst this card is in hand",
+  "CRIMSONFANG-BITE_FORCE.title": "Bite Force",
+
+  "CRIMSONFANG-SHARPSHOOTER.description": "Deal {Damage:diff()} Damage.\nDamage increases by {Base:diff()} for each Enemy hit along the way.",
+  "CRIMSONFANG-SHARPSHOOTER.title": "Sharpshooter",
+
+  "CRIMSONFANG-SECOND_HANDSMOKE.description": "Deal {Damage:diff()} Damage.\nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].\nDeal {SecondDamage:diff()} Damage to all other enemies.",
+  "CRIMSONFANG-SECOND_HANDSMOKE.title": "Second-Hand Smoke",
+
+  "CRIMSONFANG-EFFERVESCENCE.description": "[gold]Conjure[/gold] a random Power from ANY Character",
+  "CRIMSONFANG-EFFERVESCENCE.title": "Effervescence",
+
+  "CRIMSONFANG-BREAK_THE_CYCLE.description": "If the Enemy intends to Attack, Gain {Vigor:diff()} [gold]Vigor[/gold]",
+  "CRIMSONFANG-BREAK_THE_CYCLE.title": "Break The Cycle",
+
+  "CRIMSONFANG-FOUNTAIN_OF_YOUTH.description": "[gold]Conjure[/gold].\n[gold]On Cast[/gold] - Gain {Energy:energyIcons()}",
+  "CRIMSONFANG-FOUNTAIN_OF_YOUTH.title": "Fountain of Youth",
+
+  "CRIMSONFANG-METANOIA.description": "Choose a card in your [gold]Hand[/gold] to [gold]Transform[/gold] into a card of the same [gold]Rarity[/gold] and [gold]Type[/gold] from ANY Character",
+  "CRIMSONFANG-METANOIA.title": "Metanoia",
+
+  "CRIMSONFANG-EX_NIHILO.description": "Create {IfUpgraded:show:\nX+1|X} random cards from ANY character.\nThey're free to play this turn.",
+  "CRIMSONFANG-EX_NIHILO.title": "Ex Nihilo",
+
+  "CRIMSONFANG-DEFY_FATE.description": "Choose 1 of 3 random Cards from other Players [gold]Pools[/gold] to add into your [gold]Hand[/gold].{IfUpgraded:show:\nThen [gold]Upgrade[/gold] it.|}",
+  "CRIMSONFANG-DEFY_FATE.title": "Defy Fate",
+
+  "CRIMSONFANG-SIMULACRUM.description": "[gold]Cast[/gold] {CastAmount:diff()} for each card that [gold]Conjures[/gold] in your [gold]Discard[/gold] pile.",
+  "CRIMSONFANG-SIMULACRUM.title": "Simulacrum",
+
+  "CRIMSONFANG-BLOODIED_HANDS.description": "Apply {WeakPower:diff()} [gold]Weak[/gold].\nPlay {Cards:diff()} random [gold]Attacks[/gold] from your [gold]Draw Pile[/gold]",
+  "CRIMSONFANG-BLOODIED_HANDS.title": "Bloodied Hands",
+        
+  "CRIMSONFANG-FERVOUR.description": "[gold]Cast[/gold] {CastAmount:diff()}.\nGain {Block:diff()} [gold]Block[/gold].\nDeal {Damage:diff()} Damage to a random Enemy.",
+  "CRIMSONFANG-FERVOUR.title": "Fervour",
+
+  "CRIMSONFANG-RANCOUR.description": "[gold]Transform[/gold] up to {Cards:diff()} Card{IfUpgraded:show:s|} in your hand into [gold]Fervour[/gold].",
+  "CRIMSONFANG-RANCOUR.title": "Rancour",
+
+  "CRIMSONFANG-FLINCH.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Conjure[/gold].\n[gold]On Cast[/gold] - Gain {BlockSecond:diff()} [gold]Block[/gold]",
+  "CRIMSONFANG-FLINCH.title": "Flinch",
+
+  "CRIMSONFANG-SINGE.description": "Gain {WeakPower:diff()} [gold]Weak[/gold].\nGain {Block:diff()} [gold]Block[/gold]",
+  "CRIMSONFANG-SINGE.title": "Singe",
+
+  "CRIMSONFANG-TRANQUILIZER.description": "Gain {Block:diff()} [gold]Block[/gold].\nEnd your turn.",
+  "CRIMSONFANG-TRANQUILIZER.title": "Tranquilizer"
+}

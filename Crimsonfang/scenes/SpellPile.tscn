@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3oq4soo7jpyx"]
+
+[ext_resource type="Script" uid="uid://dbgqnfkaqqs0w" path="res://CrimsonfangCode/Utilities/NSpellPile.cs" id="1"]
+[ext_resource type="Texture2D" uid="uid://dwake2bx0qwk2" path="res://Crimsonfang/images/combat_ui/spell_pile.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bswiaflpt6jm0" path="res://Crimsonfang/images/combat_ui/energy_counter/morningstar_orb_layer_2.png" id="2_gdwk4"]
+[ext_resource type="Texture2D" uid="uid://jatv78x0d3jl" path="res://Crimsonfang/images/combat_ui/energy_counter/morningstar_orb_layer_3.png" id="3_i1sve"]
+[ext_resource type="Script" uid="uid://vfkmia4pxu2w" path="res://CrimsonfangCode/Utilities/CrimsonfangMegaLabel.cs" id="4"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oik5f"]
+particle_flag_disable_z = true
+spread = 0.0
+angular_velocity_min = 19.999983
+angular_velocity_max = 19.999983
+gravity = Vector3(0, 0, 0)
+scale_min = 0.35
+scale_max = 0.35
+
+[node name="SpellPile2" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 80.0
+offset_bottom = 80.0
+pivot_offset = Vector2(40, 40)
+script = ExtResource("1")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(40, 40)
+mouse_filter = 2
+texture = ExtResource("2")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Icon"]
+position = Vector2(41, 41)
+amount = 1
+texture = ExtResource("2_gdwk4")
+lifetime = 9999999.0
+process_material = SubResource("ParticleProcessMaterial_oik5f")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Icon"]
+position = Vector2(40, 41)
+amount = 1
+texture = ExtResource("3_i1sve")
+lifetime = 9999999.0
+process_material = SubResource("ParticleProcessMaterial_oik5f")
+
+[node name="ControllerIcon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CountContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -23.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(24, 24)
+mouse_filter = 2
+
+[node name="Count" type="Label" parent="CountContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -26.0
+offset_right = -12.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.70980394, 0.8862745, 1)
+theme_override_colors/font_outline_color = Color(0.20392157, 0.12156863, 0.18431373, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 12
+theme_override_constants/shadow_outline_size = 12
+theme_override_font_sizes/font_size = 26
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4")
+theme_override_colors/font_color = Color(1, 0.70980394, 0.8862745, 1)
+theme_override_colors/font_outline_color = Color(0.20392157, 0.12156863, 0.18431373, 1)

@@ -1,0 +1,225 @@
+using System.Reflection;
+using Godot;
+using HarmonyLib;
+using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Characters;
+using MegaCrit.Sts2.Core.Nodes.Screens.Timeline;
+using MegaCrit.Sts2.Core.Saves;
+using MegaCrit.Sts2.Core.Saves.Managers;
+using MegaCrit.Sts2.Core.Saves.Runs;
+using MegaCrit.Sts2.Core.Timeline;
+using MegaCrit.Sts2.Core.Timeline.Epochs;
+
+namespace Crimsonfang.CrimsonfangCode.Epochs;
+
+[HarmonyPatch]
+public class EpochPatches
+{
+    private const BindingFlags InstNonPublic = BindingFlags.Instance | BindingFlags.NonPublic;
+    private static readonly MethodInfo? MidRun = Find("TryObtainEpochMidRun", InstNonPublic);
+    private static readonly MethodInfo? PostRun = Find("TryObtainEpochPostRun", InstNonPublic);
+    private static readonly MethodInfo? GetElites =
+        Find("GetEliteEncounters", BindingFlags.Static | BindingFlags.NonPublic);
+
+    private static MethodInfo? Find(string name, BindingFlags flags)
+    {
+        var method = typeof(ProgressSaveManager).GetMethod(name, flags);
+        if (method == null)
+            MainFile.Logger.Error($"[Epochs] ProgressSaveManager.{name} is not in this build of the game, "
+                + "so the Crimsonfang epochs it awards stay locked.");
+        return method;
+    }
+
+    private static void Award(MethodInfo? award, ProgressSaveManager mgr, EpochModel epoch, params object[] recipient)
+    {
+        if (award == null) return;
+        try
+        {
+            award.Invoke(mgr, [epoch, .. recipient]);
+        }
+        catch (Exception e)
+        {
+            MainFile.Logger.Error($"[Epochs] Could not award {epoch.Id}: {e}");
+        }
+    }
+
+    // Parent first: a child under an unobtained parent can't be revealed and locks the main menu
+    private static void AwardMidRun(ProgressSaveManager mgr, EpochModel epoch, Player player)
+    {
+        var root = EpochModel.Get<CrimsonfangEpochs.Crimsonfang5Epoch>();
+        if (epoch.Id != root.Id && !mgr.Progress.IsEpochObtained(root.Id))
+            Award(MidRun, mgr, root, player);
+        Award(MidRun, mgr, epoch, player);
+    }
+
+    private static void AwardPostRun(ProgressSaveManager mgr, EpochModel epoch, SerializablePlayer sp, SerializableRun sr) =>
+        Award(PostRun, mgr, epoch, sp, sr);
+
+    private static bool Enabled => EpochRegistration.Supported;
+
+    private static bool IsCrimsonfang(Player p) => p?.Character is Character.Crimsonfang;
+
+    // OrNull, since GetById throws when the save's character mod is uninstalled
+    private static bool IsCrimsonfang(SerializablePlayer sp) =>
+        sp.CharacterId != null && ModelDb.GetByIdOrNull<CharacterModel>(sp.CharacterId) is Character.Crimsonfang;
+
+    [HarmonyPatch(typeof(ProgressSaveManager), "ObtainCharUnlockEpoch")]
+    [HarmonyPostfix]
+    private static void AwardActEpoch(ProgressSaveManager __instance, Player localPlayer, int act)
+    {
+        if (!Enabled || !IsCrimsonfang(localPlayer)) return;
+        EpochModel? epoch = act switch
+        {
+            0 => EpochModel.Get<CrimsonfangEpochs.Crimsonfang3Epoch>(),
+            1 => EpochModel.Get<CrimsonfangEpochs.Crimsonfang2Epoch>(),
+            2 => EpochModel.Get<CrimsonfangEpochs.Crimsonfang1Epoch>(),
+            _ => null,
+        };
+        if (epoch != null) AwardMidRun(__instance, epoch, localPlayer);
+    }
+
+    [HarmonyPatch(typeof(ProgressSaveManager), "CheckFifteenElitesDefeatedEpoch")]
+    [HarmonyPostfix]
+    private static void AwardEliteEpoch(ProgressSaveManager __instance, Player localPlayer)
+    {
+        if (!Enabled || !IsCrimsonfang(localPlayer)) return;
+        if (GetElites?.Invoke(null, null) is not HashSet<ModelId> elites) return;
+        if (CountWins(localPlayer, elites) >= 15)
+            AwardMidRun(__instance, EpochModel.Get<CrimsonfangEpochs.Crimsonfang4Epoch>(), localPlayer);
+    }
+
+    [HarmonyPatch(typeof(ProgressSaveManager), "CheckFifteenBossesDefeatedEpoch")]
+    [HarmonyPostfix]
+    private static void AwardBossEpoch(ProgressSaveManager __instance, Player localPlayer)
+    {
+        if (!Enabled || !IsCrimsonfang(localPlayer)) return;
+        var bosses = ModelDb.Acts.SelectMany(a => a.AllBossEncounters.Select(e => e.Id)).ToHashSet();
+        if (CountWins(localPlayer, bosses) >= 15)
+            AwardMidRun(__instance, EpochModel.Get<CrimsonfangEpochs.Crimsonfang6Epoch>(), localPlayer);
+    }
+
+    [HarmonyPatch(typeof(ProgressSaveManager), "CheckAscensionOneCompleted")]
+    [HarmonyPostfix]
+    private static void AwardAscensionEpoch(ProgressSaveManager __instance, SerializablePlayer serializablePlayer, SerializableRun serializableRun)
+    {
+        if (Enabled && serializableRun.Ascension == 1 && IsCrimsonfang(serializablePlayer))
+            AwardPostRun(__instance, EpochModel.Get<CrimsonfangEpochs.Crimsonfang7Epoch>(), serializablePlayer, serializableRun);
+    }
+
+    [HarmonyPatch(typeof(ProgressSaveManager), "PostRunUnlockCharacterEpochCheck")]
+    [HarmonyPostfix]
+    private static void AwardFirstRunEpoch(ProgressSaveManager __instance, SerializablePlayer serializablePlayer, SerializableRun serializableRun)
+    {
+        if (!Enabled || !(serializablePlayer.CharacterId != null && ModelDb.GetByIdOrNull<CharacterModel>(serializablePlayer.CharacterId) is Fool)) return;
+        var ch1 = EpochModel.Get<CrimsonfangEpochs.Crimsonfang5Epoch>();
+        AwardPostRun(__instance, ch1, serializablePlayer, serializableRun);
+        PromoteIfSlotMissing(__instance.Progress, ch1);
+    }
+
+    // ObtainedNoSlot (after Reset Unlocks) draws no tile but locks the menu; UnlockSlot errors on other states
+    private static void PromoteIfSlotMissing(ProgressState progress, EpochModel epoch)
+    {
+        var entry = progress.Epochs.FirstOrDefault(e => e.Id == epoch.Id);
+        if (entry?.State != EpochState.ObtainedNoSlot) return;
+        if (!progress.IsEpochRevealed(EpochModel.GetId<NeowEpoch>())) return;
+        progress.UnlockSlot(epoch.Id);
+    }
+
+    // Vanilla's BFS from NeowEpoch can't reach our mid-run children until Crimsonfang5 lands
+    [HarmonyPatch(typeof(ProgressSaveManager), nameof(ProgressSaveManager.GetRevealableEpochs))]
+    [HarmonyPostfix]
+    private static void RevealObtainedCrimsonfangEpochs(ProgressSaveManager __instance, ref IEnumerable<SerializableEpoch> __result)
+    {
+        if (!Enabled) return;
+
+        if (!__instance.Progress.IsEpochObtained(EpochModel.GetId<CrimsonfangEpochs.Crimsonfang5Epoch>())) return;
+
+        var list = __result.ToList();
+        var seen = new HashSet<string>(list.Select(e => e.Id));
+        var added = false;
+        foreach (var epoch in __instance.Progress.Epochs)
+        {
+            if (epoch.State != EpochState.Obtained && epoch.State != EpochState.ObtainedNoSlot) continue;
+            if (!seen.Add(epoch.Id)) continue;
+            EpochModel model;
+            try { model = EpochModel.Get(epoch.Id); }
+            catch { continue; }
+            if (model is CrimsonfangEpoch)
+            {
+                list.Add(epoch);
+                added = true;
+            }
+        }
+        if (added) __result = list;
+    }
+
+    private static int CountWins(Player player, HashSet<ModelId> encounterIds)
+    {
+        var character = player.Character.Id;
+        var stats = SaveManager.Instance?.Progress?.EncounterStats;
+        if (stats == null) return 0;
+        var wins = 0;
+        foreach (var e in stats.Values)
+        {
+            if (!encounterIds.Contains(e.Id)) continue;
+            foreach (var f in e.FightStats)
+                if (f.Character == character) { wins += f.Wins; break; }
+        }
+        return wins;
+    }
+
+    [HarmonyPatch(typeof(SaveManager), "GetCardUnlockEpochIds")] [HarmonyPostfix]
+    private static void GateCards(ref string[] __result) => Append(ref __result, EpochUnlockKind.Cards);
+
+    [HarmonyPatch(typeof(SaveManager), "GetRelicUnlockEpochIds")] [HarmonyPostfix]
+    private static void GateRelics(ref string[] __result) => Append(ref __result, EpochUnlockKind.Relics);
+
+    [HarmonyPatch(typeof(SaveManager), "GetPotionUnlockEpochIds")] [HarmonyPostfix]
+    private static void GatePotions(ref string[] __result) => Append(ref __result, EpochUnlockKind.Potions);
+
+    private static void Append(ref string[] result, EpochUnlockKind kind)
+    {
+        if (!Enabled) return;
+        result = result.Concat(EpochRegistration.GatingEpochIds(kind)).ToArray();
+    }
+
+    private const string EpochImageDir = "res://Crimsonfang/images/epochs/";
+
+    [HarmonyPatch(typeof(EpochModel), "ResolvedPortraitPath", MethodType.Getter)] [HarmonyPostfix]
+    private static void OurPortrait(EpochModel __instance, ref string __result)
+    {
+        if (__instance is CrimsonfangEpoch) __result = EpochImageDir + __instance.Id.ToLowerInvariant() + ".png";
+    }
+
+    [HarmonyPatch(typeof(EpochModel), "PackedPortraitPath", MethodType.Getter)] [HarmonyPostfix]
+    private static void OurPackedPortrait(EpochModel __instance, ref string __result)
+    {
+        if (__instance is CrimsonfangEpoch) __result = EpochImageDir + __instance.Id.ToLowerInvariant() + ".png";
+    }
+
+    [HarmonyPatch(typeof(EpochModel), "HasRealPortrait", MethodType.Getter)] [HarmonyPostfix]
+    private static void OurPortraitIsReal(EpochModel __instance, ref bool __result)
+    {
+        if (__instance is CrimsonfangEpoch)
+            __result = ResourceLoader.Exists(EpochImageDir + __instance.Id.ToLowerInvariant() + ".png");
+    }
+
+    [HarmonyPatch(typeof(NeowEpoch), "GetTimelineExpansion")] [HarmonyPostfix]
+    private static void AddFirstChapterSlot(ref EpochModel[] __result)
+    {
+        if (!Enabled) return;
+        var ch1 = EpochModel.Get<CrimsonfangEpochs.Crimsonfang5Epoch>();
+        if (__result.All(e => e.Id != ch1.Id))
+            __result = __result.Append(ch1).ToArray();
+    }
+
+    // A prefix, because the async body reads the list
+    [HarmonyPatch(typeof(NTimelineScreen), "AddEpochSlots")]
+    [HarmonyPrefix]
+    private static void HideCrimsonfangEpochsWhenDisabled(List<EpochSlotData> slotsToAdd)
+    {
+        if (Enabled) return;
+        slotsToAdd.RemoveAll(s => s.Model is CrimsonfangEpoch);
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "CRIMSONFANG-ON_CAST.description": "This effect is only triggered when this card is [gold]Cast[/gold].\nNon [gold]On Cast[/gold] effects are not triggered when a card is [gold]Cast[/gold]",
+  "CRIMSONFANG-ON_CAST.title": "On Cast",
+
+  "CRIMSONFANG-CONJURE.description": "When played this card is moved to the [gold]Spell Pile[/gold] if it is not already there.",
+  "CRIMSONFANG-CONJURE.title": "Conjure",
+
+  "CRIMSONFANG-CAST_DYNAMIC.description": "Play {CastAmount:plural:[blue]{}[/blue] Card|[blue]{}[/blue] Cards} from the top of the [gold]Spell Pile[/gold]",
+  "CRIMSONFANG-CAST_DYNAMIC.title": "Cast {CastAmount}",
+  "CRIMSONFANG-CAST_STATIC.description": "Play Cards from the top of the [gold]Spell Pile[/gold]",
+  "CRIMSONFANG-CAST_STATIC.title": "Cast",
+  
+  "Spell_PILE.title": "Conjured Cards",
+  "Spell_PILE.description": "Click to view cards currently Conjured"
+}

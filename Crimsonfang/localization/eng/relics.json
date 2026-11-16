@@ -1,0 +1,37 @@
+{
+  "CRIMSONFANG-SCARLET_KEEPSAKE.description": "At the start of each combat, add a [gold]Ward[/gold] into your [gold]Hand.[/gold]",
+  "CRIMSONFANG-SCARLET_KEEPSAKE.flavor": "",
+  "CRIMSONFANG-SCARLET_KEEPSAKE.title": "Scarlet Keepsake",
+
+  "CRIMSONFANG-CRIMSON_HEIRLOOM.description": "At the start of each combat, add a [green]Ward+[/green] into your [gold]Hand.[/gold]",
+  "CRIMSONFANG-CRIMSON_HEIRLOOM.flavor": "",
+  "CRIMSONFANG-CRIMSON_HEIRLOOM.title": "Crimson Heirloom",
+
+  "CRIMSONFANG-STARFRUIT.description": "+1 to all [gold]Casts[/gold].",
+  "CRIMSONFANG-STARFRUIT.flavor": "",
+  "CRIMSONFANG-STARFRUIT.title": "Starfruit",
+
+  "CRIMSONFANG-BLOOD_ORANGE_DAQUIRI.description": "The first card played each combat gains replay 1.",
+  "CRIMSONFANG-BLOOD_ORANGE_DAQUIRI.flavor": "",
+  "CRIMSONFANG-BLOOD_ORANGE_DAQUIRI.title": "Blood Orange Daquiri",
+
+  "CRIMSONFANG-PAINT_MIXER.description": "Gain {Block:diff()} [gold]Block[/gold] for each unique card color in your hand at the end of your turn.",
+  "CRIMSONFANG-PAINT_MIXER.flavor": "",
+  "CRIMSONFANG-PAINT_MIXER.title": "Paint Mixer",
+
+  "CRIMSONFANG-POLISHED_JEWEL.description": "The first time you [gold]Conjure[/gold] each turn, gain {Block:diff()} [gold]Block[/gold]",
+  "CRIMSONFANG-POLISHED_JEWEL.flavor": "",
+  "CRIMSONFANG-POLISHED_JEWEL.title": "Polished Jewel",
+  
+  "CRIMSONFANG-AMARYLLIS.description": "Every other combat, your card rewards contain an additional card from any color.",
+  "CRIMSONFANG-AMARYLLIS.flavor": "",
+  "CRIMSONFANG-AMARYLLIS.title": "Amaryllis",
+
+  "CRIMSONFANG-ECHOING_HORN.description": "Whenever a card with [gold]Replay[/gold] is played, deal [blue]{Damage:diff()}[/blue] damage to ALL enemies.",
+  "CRIMSONFANG-ECHOING_HORN.flavor": "",
+  "CRIMSONFANG-ECHOING_HORN.title": "Echoing Horn",
+
+  "CRIMSONFANG-BRASS_KNUCKLES.description": "At the start of combat add [blue]2[/blue] random cards from any color into your [gold]Hand[/gold], they gain [gold]Ethereal[/gold].",
+  "CRIMSONFANG-BRASS_KNUCKLES.flavor": "",
+  "CRIMSONFANG-BRASS_KNUCKLES.title": "Brass Knuckles"
+}
