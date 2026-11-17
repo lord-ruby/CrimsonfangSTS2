@@ -168,5 +168,8 @@
   "CRIMSONFANG-SINGE.title": "Singe",
 
   "CRIMSONFANG-TRANQUILIZER.description": "Gain {Block:diff()} [gold]Block[/gold].\nEnd your turn.",
-  "CRIMSONFANG-TRANQUILIZER.title": "Tranquilizer"
+  "CRIMSONFANG-TRANQUILIZER.title": "Tranquilizer",
+
+  "CRIMSONFANG-TRUE_VISION.description": "Draw {Cards:diff()} Cards.\nPut {CardsSecond:diff()} cards from your [gold]Hand[/gold] on top of your [gold]Draw Pile[/gold].",
+  "CRIMSONFANG-TRUE_VISION.title": "True Vision"
 }
